@@ -10,7 +10,7 @@ class App extends React.Component {
     cardAttr2: 0,
     cardAttr3: 0,
     cardImage: '',
-    cardRare: '',
+    cardRare: 'normal',
     cardTrunfo: false,
     // hasTrunfo: false,
     isSaveButtonDisabled: true,
@@ -23,6 +23,18 @@ class App extends React.Component {
     this.setState(({
       [name]: value,
     }), this.validation);
+  };
+
+  handleClick = () => {
+    this.setState(({
+      cardName: '',
+      cardDescription: '',
+      cardAttr1: 0,
+      cardAttr2: 0,
+      cardAttr3: 0,
+      cardImage: '',
+      cardRare: 'normal',
+    }));
   };
 
   setStateDefault = (key, value) => {
@@ -92,7 +104,7 @@ class App extends React.Component {
           cardTrunfo={ cardTrunfo }
           // hasTrunfo,
           isSaveButtonDisabled={ isSaveButtonDisabled }
-          // onSaveButtonClick={ onSaveButtonClick }
+          onSaveButtonClick={ this.handleClick }
         />
         <Card
           onInputChange={ this.handleChande }
