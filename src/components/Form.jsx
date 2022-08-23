@@ -52,6 +52,8 @@ export default class Form extends Component {
             name="cardAttr1"
             id="cardAttr1"
             data-testid="attr1-input"
+            max="90"
+            min="0"
           />
         </label>
         <label htmlFor="cardAttr2">
@@ -63,6 +65,8 @@ export default class Form extends Component {
             name="cardAttr2"
             id="cardAttr2"
             data-testid="attr2-input"
+            max="90"
+            min="0"
           />
         </label>
         <label htmlFor="cardAttr3">
@@ -74,6 +78,8 @@ export default class Form extends Component {
             name="cardAttr3"
             id="cardAttr3"
             data-testid="attr3-input"
+            max="90"
+            min="0"
           />
         </label>
         <label htmlFor="cardImage">

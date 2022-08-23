@@ -23,8 +23,21 @@ class App extends React.Component {
     this.setState(({
       [name]: value,
     }), () => {
-      const { cardName, cardDescription, cardImage, cardRare } = this.state;
-      if (cardName && cardDescription && cardImage && cardRare) {
+      const {
+        cardName,
+        cardDescription,
+        cardImage,
+        cardRare,
+        cardAttr1,
+        cardAttr2,
+        cardAttr3,
+      } = this.state;
+      const valor1 = Number(cardAttr1) < 0 && Number(cardAttr1) > 90 ? false : Number(cardAttr1);
+      const valor2 = Number(cardAttr2);
+      const valor3 = Number(cardAttr3);
+      const valorTotal = valor1 + valor2 + valor3;
+      const vlMin = 210;
+      if (cardName && cardDescription && cardImage && cardRare && valorTotal <= vlMin) {
         this.setState({
           isSaveButtonDisabled: false,
         });
