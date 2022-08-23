@@ -22,7 +22,18 @@ class App extends React.Component {
 
     this.setState(({
       [name]: value,
-    }));
+    }), () => {
+      const { cardName, cardDescription, cardImage, cardRare } = this.state;
+      if (cardName && cardDescription && cardImage && cardRare) {
+        this.setState({
+          isSaveButtonDisabled: false,
+        });
+      } else {
+        this.setState({
+          isSaveButtonDisabled: true,
+        });
+      }
+    });
   };
 
   render() {
