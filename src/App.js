@@ -31,6 +31,11 @@ class App extends React.Component {
     });
   };
 
+  comparandoValor = (cardValue) => {
+    const max = 90;
+    return !!(Number(cardValue) >= 0 && Number(cardValue) <= max);
+  };
+
   validation = () => {
     const {
       cardName,
@@ -42,10 +47,6 @@ class App extends React.Component {
       cardAttr3,
     } = this.state;
 
-    const max = 90;
-    const valor1 = !!(Number(cardAttr1) >= 0 && Number(cardAttr1) <= max);
-    const valor2 = !!(Number(cardAttr2) >= 0 && Number(cardAttr2) <= max);
-    const valor3 = !!(Number(cardAttr3) >= 0 && Number(cardAttr3) <= max);
     const valorTotal = Number(cardAttr1) + Number(cardAttr2) + Number(cardAttr3);
     const vlMin = 210;
 
@@ -53,9 +54,9 @@ class App extends React.Component {
       && cardDescription
       && cardImage
       && cardRare
-      && valor1
-      && valor2
-      && valor3
+      && this.comparandoValor(cardAttr1)
+      && this.comparandoValor(cardAttr2)
+      && this.comparandoValor(cardAttr3)
       && valorTotal <= vlMin
     ) {
       this.isSaveBtnDe(false);
