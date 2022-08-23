@@ -47,39 +47,39 @@ export default class Form extends Component {
           Atributo 1
           <input
             type="number"
+            min="0"
+            max="90"
             value={ cardAttr1 }
             onChange={ onInputChange }
             name="cardAttr1"
             id="cardAttr1"
             data-testid="attr1-input"
-            max="90"
-            min="0"
           />
         </label>
         <label htmlFor="cardAttr2">
           Atributo 2
           <input
             type="number"
+            min="0"
+            max="90"
             value={ cardAttr2 }
             onChange={ onInputChange }
             name="cardAttr2"
             id="cardAttr2"
             data-testid="attr2-input"
-            max="90"
-            min="0"
           />
         </label>
         <label htmlFor="cardAttr3">
           Atributo 3
           <input
             type="number"
+            min="0"
+            max="90"
             value={ cardAttr3 }
             onChange={ onInputChange }
             name="cardAttr3"
             id="cardAttr3"
             data-testid="attr3-input"
-            max="90"
-            min="0"
           />
         </label>
         <label htmlFor="cardImage">
