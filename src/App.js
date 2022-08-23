@@ -48,7 +48,7 @@ class App extends React.Component {
     } = this.state;
 
     const valorTotal = Number(cardAttr1) + Number(cardAttr2) + Number(cardAttr3);
-    const vlMin = 210;
+    const valorMin = 210;
 
     if (cardName
       && cardDescription
@@ -57,7 +57,7 @@ class App extends React.Component {
       && this.comparandoValor(cardAttr1)
       && this.comparandoValor(cardAttr2)
       && this.comparandoValor(cardAttr3)
-      && valorTotal <= vlMin
+      && valorTotal <= valorMin
     ) {
       this.isSaveBtnDe(false);
     } else {
