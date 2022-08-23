@@ -25,6 +25,12 @@ class App extends React.Component {
     }), this.validation);
   };
 
+  isSaveBtnDe = (boleano) => {
+    this.setState({
+      isSaveButtonDisabled: boleano,
+    });
+  };
+
   validation = () => {
     const {
       cardName,
@@ -52,13 +58,9 @@ class App extends React.Component {
       && valor3
       && valorTotal <= vlMin
     ) {
-      this.setState({
-        isSaveButtonDisabled: false,
-      });
+      this.isSaveBtnDe(false);
     } else {
-      this.setState({
-        isSaveButtonDisabled: true,
-      });
+      this.isSaveBtnDe(true);
     }
   };
 
