@@ -37,7 +37,6 @@ class App extends React.Component {
       cardTrunfo,
       // hasTrunfo,
       isSaveButtonDisabled,
-      onSaveButtonClick,
     } = this.state;
     return (
       <>
@@ -53,7 +52,7 @@ class App extends React.Component {
           cardTrunfo={ cardTrunfo }
           // hasTrunfo,
           isSaveButtonDisabled={ isSaveButtonDisabled }
-          onSaveButtonClick={ onSaveButtonClick }
+          // onSaveButtonClick={ onSaveButtonClick }
         />
         <Card
           onInputChange={ this.handleChande }
