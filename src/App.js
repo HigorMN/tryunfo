@@ -25,9 +25,9 @@ class App extends React.Component {
     }), this.validation);
   };
 
-  isSaveBtnDe = (boleano) => {
+  setStateDefault = (key, value) => {
     this.setState({
-      isSaveButtonDisabled: boleano,
+      [key]: value,
     });
   };
 
@@ -59,9 +59,9 @@ class App extends React.Component {
       && this.comparandoValor(cardAttr3)
       && valorTotal <= valorMin
     ) {
-      this.isSaveBtnDe(false);
+      this.setStateDefault('isSaveButtonDisabled', false);
     } else {
-      this.isSaveBtnDe(true);
+      this.setStateDefault('isSaveButtonDisabled', true);
     }
   };
 
