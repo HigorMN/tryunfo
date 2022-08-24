@@ -109,6 +109,7 @@ export default class Form extends Component {
         </label>
         <label htmlFor="cardTrunfo">
           Super Trunfo
+          {hasTrunfo && <span>Você já tem um Super Trunfo em seu baralho</span>}
           {hasTrunfo === false && <input
             type="checkbox"
             checked={ cardTrunfo }
@@ -117,13 +118,18 @@ export default class Form extends Component {
             id="cardTrunfo"
             data-testid="trunfo-input"
           />}
-          {hasTrunfo && <p>Você já tem um Super Trunfo em seu baralho</p>}
-
         </label>
         <button
           type="button"
           onClick={
-            () => onSaveButtonClick()
+            () => onSaveButtonClick({
+              cardName,
+              cardDescription,
+              cardAttr1,
+              cardAttr2,
+              cardAttr3,
+              cardImage,
+              cardRare })
           }
           name="onSaveButtonClick"
           data-testid="save-button"

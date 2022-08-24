@@ -36,7 +36,7 @@ class App extends React.Component {
       cardAttr3: 0,
       cardImage: '',
       cardRare: 'normal',
-      hasTrunfo: true,
+      hasTrunfo: state.cardTrunfo,
     }));
   };
 
@@ -92,6 +92,7 @@ class App extends React.Component {
       cardTrunfo,
       hasTrunfo,
       isSaveButtonDisabled,
+      cardSave,
     } = this.state;
     return (
       <>
@@ -120,6 +121,22 @@ class App extends React.Component {
           cardRare={ cardRare }
           cardTrunfo={ cardTrunfo }
         />
+        <ul>
+          {cardSave.map((e) => (
+            <li key={ e.cardName }>
+              <Card
+                onInputChange={ this.handleChande }
+                cardName={ e.cardName }
+                cardDescription={ e.cardDescription }
+                cardAttr1={ e.cardAttr1 }
+                cardAttr2={ e.cardAttr2 }
+                cardAttr3={ e.cardAttr3 }
+                cardImage={ e.cardImage }
+                cardRare={ e.cardRare }
+                cardTrunfo={ e.cardTrunfo }
+              />
+            </li>))}
+        </ul>
       </>
     );
   }
