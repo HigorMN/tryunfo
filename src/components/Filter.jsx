@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 export default class Filter extends Component {
   render() {
-    const { filterI, onInputChange, filterR } = this.props;
+    const { filterI, onInputChange, filterR, trunfo } = this.props;
     return (
       <>
         <div>
@@ -14,6 +14,7 @@ export default class Filter extends Component {
             data-testid="name-filter"
             value={ filterI }
             onChange={ onInputChange }
+            disabled={ trunfo }
           />
         </div>
         <div>
@@ -22,12 +23,26 @@ export default class Filter extends Component {
             name="filterR"
             value={ filterR }
             onChange={ onInputChange }
+            disabled={ trunfo }
           >
             <option value="todas">todas</option>
             <option value="normal">normal</option>
             <option value="raro">raro</option>
             <option value="muito raro">muito raro</option>
           </select>
+        </div>
+        <div>
+          <label htmlFor="trunfo">
+            Super Trunfo
+            <input
+              type="checkbox"
+              checked={ trunfo }
+              onChange={ onInputChange }
+              name="trunfo"
+              id="trunfo"
+              data-testid="trunfo-filter"
+            />
+          </label>
         </div>
       </>
     );
@@ -38,4 +53,5 @@ Filter.propTypes = {
   filterI: PropTypes.string,
   onInputChange: PropTypes.func,
   filterR: PropTypes.string,
+  trunfo: PropTypes.string,
 }.isRequered;

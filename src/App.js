@@ -19,6 +19,7 @@ class App extends React.Component {
     isSaveButtonDisabled: true,
     filterI: '',
     filterR: 'todas',
+    trunfo: false,
   };
 
   handleChange = ({ target }) => {
@@ -105,9 +106,12 @@ class App extends React.Component {
     }
   };
 
-  filterList = (filterI, Rare) => {
+  filterList = (filterI, Rare, trunfo) => {
     const { cardSave, filterR } = this.state;
 
+    if (trunfo) {
+      return cardSave.filter((e) => e.cardTrunfo);
+    }
     if (filterI) {
       return cardSave.filter((f) => f.cardName.includes(filterI));
     }
@@ -131,6 +135,7 @@ class App extends React.Component {
       isSaveButtonDisabled,
       filterI,
       filterR,
+      trunfo,
     } = this.state;
     return (
       <main>
@@ -170,11 +175,12 @@ class App extends React.Component {
             filterI={ filterI }
             onInputChange={ this.handleChange }
             filterR={ filterR }
+            trunfo={ trunfo }
           />
         </div>
         <div>
           <ul>
-            { this.filterList(filterI, filterR).map((e) => (
+            { this.filterList(filterI, filterR, trunfo).map((e) => (
               <li key={ e.cardName }>
                 <Card
                   onInputChange={ this.handleChange }
