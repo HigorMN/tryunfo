@@ -2,6 +2,7 @@ import React from 'react';
 import Card from './components/Card';
 import Form from './components/Form';
 import './App.css';
+import Filter from './components/Filter';
 
 class App extends React.Component {
   state = {
@@ -40,6 +41,7 @@ class App extends React.Component {
       hasTrunfo: this.trunfo(),
       cardTrunfo: this.trunfoON(),
       isSaveButtonDisabled: true,
+      filterI: '',
     }));
   };
 
@@ -102,6 +104,11 @@ class App extends React.Component {
     }
   };
 
+  filterList = (filterI) => {
+    const { cardSave } = this.state;
+    return cardSave.filter((f) => f.cardName.includes(filterI));
+  };
+
   render() {
     const {
       cardName,
@@ -114,7 +121,7 @@ class App extends React.Component {
       cardTrunfo,
       hasTrunfo,
       isSaveButtonDisabled,
-      cardSave,
+      filterI,
     } = this.state;
     return (
       <main>
@@ -150,8 +157,11 @@ class App extends React.Component {
           </div>
         </div>
         <div>
+          <Filter filterI={ filterI } onInputChange={ this.handleChange } />
+        </div>
+        <div>
           <ul>
-            { cardSave.map((e) => (
+            { this.filterList(filterI).map((e) => (
               <li key={ e.cardName }>
                 <Card
                   onInputChange={ this.handleChange }
@@ -172,7 +182,8 @@ class App extends React.Component {
                   Excluir
 
                 </button>
-              </li>))}
+              </li>
+            ))}
           </ul>
         </div>
       </main>
