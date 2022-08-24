@@ -16,9 +16,10 @@ class App extends React.Component {
     cardTrunfo: false,
     hasTrunfo: false,
     isSaveButtonDisabled: true,
+    // filter: '',
   };
 
-  handleChande = ({ target }) => {
+  handleChange = ({ target }) => {
     const { type, name } = target;
     const value = type === 'checkbox' ? target.checked : target.value;
 
@@ -43,11 +44,11 @@ class App extends React.Component {
     }));
   };
 
-  handleClickDelete = (event) => {
+  handleClickDelete = ({ target }) => {
     this.setState({
       hasTrunfo: false,
     });
-    event.target.parentNode.remove();
+    target.parentNode.remove();
   };
 
   trunfo = () => {
@@ -115,13 +116,14 @@ class App extends React.Component {
       hasTrunfo,
       isSaveButtonDisabled,
       cardSave,
+      // filter,
     } = this.state;
     return (
       <main>
         <div className="conteudo">
           <div className="divForm">
             <Form
-              onInputChange={ this.handleChande }
+              onInputChange={ this.handleChange }
               cardName={ cardName }
               cardDescription={ cardDescription }
               cardAttr1={ cardAttr1 }
@@ -135,10 +137,9 @@ class App extends React.Component {
               onSaveButtonClick={ this.handleClick }
             />
           </div>
-
           <div className="divPrev">
             <Card
-              onInputChange={ this.handleChande }
+              onInputChange={ this.handleChange }
               cardName={ cardName }
               cardDescription={ cardDescription }
               cardAttr1={ cardAttr1 }
@@ -150,12 +151,22 @@ class App extends React.Component {
             />
           </div>
         </div>
+        {/* <div>
+          <input
+            type="text"
+            value={ filter }
+            name="filter"
+            id="filter"
+            onChange={ this.handleChange }
+            data-testid="name-filter"
+          />
+        </div> */}
         <div>
           <ul>
-            {cardSave.map((e) => (
+            { cardSave.map((e) => (
               <li key={ e.cardName }>
                 <Card
-                  onInputChange={ this.handleChande }
+                  onInputChange={ this.handleChange }
                   cardName={ e.cardName }
                   cardDescription={ e.cardDescription }
                   cardAttr1={ e.cardAttr1 }
@@ -174,6 +185,29 @@ class App extends React.Component {
 
                 </button>
               </li>))}
+            {/* {filter && cardSave.filter((e) => e.cardName === filter)
+              .map((e) => (
+                <li key={ e.cardName }>
+                  <Card
+                    onInputChange={ this.handleChange }
+                    cardName={ e.cardName }
+                    cardDescription={ e.cardDescription }
+                    cardAttr1={ e.cardAttr1 }
+                    cardAttr2={ e.cardAttr2 }
+                    cardAttr3={ e.cardAttr3 }
+                    cardImage={ e.cardImage }
+                    cardRare={ e.cardRare }
+                    cardTrunfo={ e.cardTrunfo }
+                  />
+                  <button
+                    type="button"
+                    data-testid="delete-button"
+                    onClick={ this.handleClickDelete }
+                  >
+                    Excluir
+
+                  </button>
+                </li>))} */}
           </ul>
         </div>
       </main>

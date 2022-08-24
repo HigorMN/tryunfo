@@ -4,26 +4,22 @@
 }
 
 main {
+  align-items: center;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
 }
 
-.conteudo,
-ul {
+.conteudo, ul {
   display: flex;
 }
 
-form,
-.divPrev {
+form, .divPrev {
   display: flex;
   flex-direction: column;
   padding: 50px;
 }
 
-.divForm,
-.divPrev,
-li {
+.divForm, .divPrev, li {
   border: 1px solid black;
 }
