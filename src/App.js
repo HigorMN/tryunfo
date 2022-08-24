@@ -16,7 +16,6 @@ class App extends React.Component {
     cardTrunfo: false,
     hasTrunfo: false,
     isSaveButtonDisabled: true,
-    filter: '',
   };
 
   handleChange = ({ target }) => {
@@ -116,7 +115,6 @@ class App extends React.Component {
       hasTrunfo,
       isSaveButtonDisabled,
       cardSave,
-      filter,
     } = this.state;
     return (
       <main>
@@ -152,18 +150,8 @@ class App extends React.Component {
           </div>
         </div>
         <div>
-          <input
-            type="text"
-            value={ filter }
-            name="filter"
-            id="filter"
-            onChange={ this.handleChange }
-            data-testid="name-filter"
-          />
-        </div>
-        <div>
           <ul>
-            { cardSave.filter((f) => f.cardName.includes(filter)).map((e) => (
+            { cardSave.map((e) => (
               <li key={ e.cardName }>
                 <Card
                   onInputChange={ this.handleChange }
@@ -185,29 +173,6 @@ class App extends React.Component {
 
                 </button>
               </li>))}
-            {/* {filter && cardSave.filter((e) => e.cardName === filter)
-              .map((e) => (
-                <li key={ e.cardName }>
-                  <Card
-                    onInputChange={ this.handleChange }
-                    cardName={ e.cardName }
-                    cardDescription={ e.cardDescription }
-                    cardAttr1={ e.cardAttr1 }
-                    cardAttr2={ e.cardAttr2 }
-                    cardAttr3={ e.cardAttr3 }
-                    cardImage={ e.cardImage }
-                    cardRare={ e.cardRare }
-                    cardTrunfo={ e.cardTrunfo }
-                  />
-                  <button
-                    type="button"
-                    data-testid="delete-button"
-                    onClick={ this.handleClickDelete }
-                  >
-                    Excluir
-
-                  </button>
-                </li>))} */}
           </ul>
         </div>
       </main>
