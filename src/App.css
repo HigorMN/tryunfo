@@ -10,7 +10,8 @@ main {
   align-items: center;
 }
 
-.conteudo {
+.conteudo,
+ul {
   display: flex;
 }
 
@@ -22,6 +23,7 @@ form,
 }
 
 .divForm,
-.divPrev {
+.divPrev,
+li {
   border: 1px solid black;
 }

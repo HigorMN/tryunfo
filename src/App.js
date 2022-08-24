@@ -160,6 +160,14 @@ class App extends React.Component {
                   cardRare={ e.cardRare }
                   cardTrunfo={ e.cardTrunfo }
                 />
+                <button
+                  type="button"
+                  data-testid="delete-button"
+                  onClick={ this.handleClickDelete }
+                >
+                  Excluir
+
+                </button>
               </li>))}
           </ul>
         </div>
