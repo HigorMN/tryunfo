@@ -4,6 +4,7 @@ import Form from './components/Form';
 
 class App extends React.Component {
   state = {
+    cardSave: [],
     cardName: '',
     cardDescription: '',
     cardAttr1: 0,
@@ -12,7 +13,7 @@ class App extends React.Component {
     cardImage: '',
     cardRare: 'normal',
     cardTrunfo: false,
-    // hasTrunfo: false,
+    hasTrunfo: false,
     isSaveButtonDisabled: true,
   };
 
@@ -25,8 +26,9 @@ class App extends React.Component {
     }), this.validation);
   };
 
-  handleClick = () => {
-    this.setState(({
+  handleClick = (objeto) => {
+    this.setState((state) => ({
+      cardSave: [...state.cardSave, objeto],
       cardName: '',
       cardDescription: '',
       cardAttr1: 0,
@@ -34,6 +36,7 @@ class App extends React.Component {
       cardAttr3: 0,
       cardImage: '',
       cardRare: 'normal',
+      hasTrunfo: true,
     }));
   };
 
@@ -87,7 +90,7 @@ class App extends React.Component {
       cardImage,
       cardRare,
       cardTrunfo,
-      // hasTrunfo,
+      hasTrunfo,
       isSaveButtonDisabled,
     } = this.state;
     return (
@@ -102,7 +105,7 @@ class App extends React.Component {
           cardImage={ cardImage }
           cardRare={ cardRare }
           cardTrunfo={ cardTrunfo }
-          // hasTrunfo,
+          hasTrunfo={ hasTrunfo }
           isSaveButtonDisabled={ isSaveButtonDisabled }
           onSaveButtonClick={ this.handleClick }
         />
