@@ -17,6 +17,8 @@ class App extends React.Component {
     cardTrunfo: false,
     hasTrunfo: false,
     isSaveButtonDisabled: true,
+    filterI: '',
+    filterR: 'todas',
   };
 
   handleChange = ({ target }) => {
@@ -41,7 +43,6 @@ class App extends React.Component {
       hasTrunfo: this.trunfo(),
       cardTrunfo: this.trunfoON(),
       isSaveButtonDisabled: true,
-      filterI: '',
     }));
   };
 
@@ -104,9 +105,16 @@ class App extends React.Component {
     }
   };
 
-  filterList = (filterI) => {
-    const { cardSave } = this.state;
-    return cardSave.filter((f) => f.cardName.includes(filterI));
+  filterList = (filterI, Rare) => {
+    const { cardSave, filterR } = this.state;
+
+    if (Rare === 'todas') {
+      return cardSave;
+    }
+    if (filterI) {
+      return cardSave.filter((f) => f.cardName.includes(filterI));
+    }
+    return cardSave.filter((f) => f.cardRare === filterR);
   };
 
   render() {
@@ -122,6 +130,7 @@ class App extends React.Component {
       hasTrunfo,
       isSaveButtonDisabled,
       filterI,
+      filterR,
     } = this.state;
     return (
       <main>
@@ -157,11 +166,15 @@ class App extends React.Component {
           </div>
         </div>
         <div>
-          <Filter filterI={ filterI } onInputChange={ this.handleChange } />
+          <Filter
+            filterI={ filterI }
+            onInputChange={ this.handleChange }
+            filterR={ filterR }
+          />
         </div>
         <div>
           <ul>
-            { this.filterList(filterI).map((e) => (
+            { this.filterList(filterI, filterR).map((e) => (
               <li key={ e.cardName }>
                 <Card
                   onInputChange={ this.handleChange }
