@@ -16,7 +16,7 @@ class App extends React.Component {
     cardTrunfo: false,
     hasTrunfo: false,
     isSaveButtonDisabled: true,
-    // filter: '',
+    filter: '',
   };
 
   handleChange = ({ target }) => {
@@ -116,7 +116,7 @@ class App extends React.Component {
       hasTrunfo,
       isSaveButtonDisabled,
       cardSave,
-      // filter,
+      filter,
     } = this.state;
     return (
       <main>
@@ -151,7 +151,7 @@ class App extends React.Component {
             />
           </div>
         </div>
-        {/* <div>
+        <div>
           <input
             type="text"
             value={ filter }
@@ -160,10 +160,10 @@ class App extends React.Component {
             onChange={ this.handleChange }
             data-testid="name-filter"
           />
-        </div> */}
+        </div>
         <div>
           <ul>
-            { cardSave.map((e) => (
+            { cardSave.filter((f) => f.cardName.includes(filter)).map((e) => (
               <li key={ e.cardName }>
                 <Card
                   onInputChange={ this.handleChange }
