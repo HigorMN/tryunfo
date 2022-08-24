@@ -43,11 +43,20 @@ class App extends React.Component {
     }));
   };
 
+  handleClickDelete = (event) => {
+    const takeTrunfo = event.target.parentNode.firstChild.lastChild;
+    if (takeTrunfo.innerText === 'Super Trunfo') {
+      this.setState(() => ({
+        cardTrunfo: false,
+        hasTrunfo: false,
+      }));
+    }
+    event.target.parentNode.remove();
+  };
+
   trunfo = () => {
     const { cardTrunfo, hasTrunfo } = this.state;
-    if (cardTrunfo || hasTrunfo) {
-      return true;
-    }
+    return !!(cardTrunfo || hasTrunfo);
   };
 
   trunfoON = () => {
