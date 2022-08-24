@@ -37,8 +37,24 @@ class App extends React.Component {
       cardAttr3: 0,
       cardImage: '',
       cardRare: 'normal',
-      hasTrunfo: state.cardTrunfo,
+      hasTrunfo: this.trunfo(),
+      cardTrunfo: this.trunfoON(),
+      isSaveButtonDisabled: true,
     }));
+  };
+
+  trunfo = () => {
+    const { cardTrunfo, hasTrunfo } = this.state;
+    if (cardTrunfo || hasTrunfo) {
+      return true;
+    }
+  };
+
+  trunfoON = () => {
+    const { hasTrunfo } = this.state;
+    if (hasTrunfo) {
+      return false;
+    }
   };
 
   setStateDefault = (key, value) => {
@@ -97,49 +113,56 @@ class App extends React.Component {
     } = this.state;
     return (
       <main>
-        <div>
-          <Form
-            onInputChange={ this.handleChande }
-            cardName={ cardName }
-            cardDescription={ cardDescription }
-            cardAttr1={ cardAttr1 }
-            cardAttr2={ cardAttr2 }
-            cardAttr3={ cardAttr3 }
-            cardImage={ cardImage }
-            cardRare={ cardRare }
-            cardTrunfo={ cardTrunfo }
-            hasTrunfo={ hasTrunfo }
-            isSaveButtonDisabled={ isSaveButtonDisabled }
-            onSaveButtonClick={ this.handleClick }
-          />
-          <Card
-            onInputChange={ this.handleChande }
-            cardName={ cardName }
-            cardDescription={ cardDescription }
-            cardAttr1={ cardAttr1 }
-            cardAttr2={ cardAttr2 }
-            cardAttr3={ cardAttr3 }
-            cardImage={ cardImage }
-            cardRare={ cardRare }
-            cardTrunfo={ cardTrunfo }
-          />
+        <div className="conteudo">
+          <div className="divForm">
+            <Form
+              onInputChange={ this.handleChande }
+              cardName={ cardName }
+              cardDescription={ cardDescription }
+              cardAttr1={ cardAttr1 }
+              cardAttr2={ cardAttr2 }
+              cardAttr3={ cardAttr3 }
+              cardImage={ cardImage }
+              cardRare={ cardRare }
+              cardTrunfo={ cardTrunfo }
+              hasTrunfo={ hasTrunfo }
+              isSaveButtonDisabled={ isSaveButtonDisabled }
+              onSaveButtonClick={ this.handleClick }
+            />
+          </div>
+
+          <div className="divPrev">
+            <Card
+              onInputChange={ this.handleChande }
+              cardName={ cardName }
+              cardDescription={ cardDescription }
+              cardAttr1={ cardAttr1 }
+              cardAttr2={ cardAttr2 }
+              cardAttr3={ cardAttr3 }
+              cardImage={ cardImage }
+              cardRare={ cardRare }
+              cardTrunfo={ cardTrunfo }
+            />
+          </div>
         </div>
-        <ul>
-          {cardSave.map((e) => (
-            <li key={ e.cardName }>
-              <Card
-                onInputChange={ this.handleChande }
-                cardName={ e.cardName }
-                cardDescription={ e.cardDescription }
-                cardAttr1={ e.cardAttr1 }
-                cardAttr2={ e.cardAttr2 }
-                cardAttr3={ e.cardAttr3 }
-                cardImage={ e.cardImage }
-                cardRare={ e.cardRare }
-                cardTrunfo={ e.cardTrunfo }
-              />
-            </li>))}
-        </ul>
+        <div>
+          <ul>
+            {cardSave.map((e) => (
+              <li key={ e.cardName }>
+                <Card
+                  onInputChange={ this.handleChande }
+                  cardName={ e.cardName }
+                  cardDescription={ e.cardDescription }
+                  cardAttr1={ e.cardAttr1 }
+                  cardAttr2={ e.cardAttr2 }
+                  cardAttr3={ e.cardAttr3 }
+                  cardImage={ e.cardImage }
+                  cardRare={ e.cardRare }
+                  cardTrunfo={ e.cardTrunfo }
+                />
+              </li>))}
+          </ul>
+        </div>
       </main>
     );
   }

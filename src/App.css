@@ -1,0 +1,27 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.conteudo {
+  display: flex;
+}
+
+form,
+.divPrev {
+  display: flex;
+  flex-direction: column;
+  padding: 50px;
+}
+
+.divForm,
+.divPrev {
+  border: 1px solid black;
+}

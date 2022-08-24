@@ -129,7 +129,8 @@ export default class Form extends Component {
               cardAttr2,
               cardAttr3,
               cardImage,
-              cardRare })
+              cardRare,
+              cardTrunfo })
           }
           name="onSaveButtonClick"
           data-testid="save-button"
