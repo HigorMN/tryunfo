@@ -108,11 +108,11 @@ class App extends React.Component {
   filterList = (filterI, Rare) => {
     const { cardSave, filterR } = this.state;
 
-    if (Rare === 'todas') {
-      return cardSave;
-    }
     if (filterI) {
       return cardSave.filter((f) => f.cardName.includes(filterI));
+    }
+    if (Rare === 'todas') {
+      return cardSave;
     }
     return cardSave.filter((f) => f.cardRare === filterR);
   };
