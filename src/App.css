@@ -124,6 +124,16 @@ button:hover:disabled {
   background: #023031;
   border-radius: 10px 10px 0 0;
   height: 40px;
-  margin: 20px auto;
+  margin: auto;
+  margin-top: 20px;
   width: 317px;
+}
+
+.img-card {
+  margin: auto;
+  width: 317px;
+}
+
+.img-card img {
+  width: 100%;
 }
