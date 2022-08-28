@@ -48,3 +48,23 @@
   margin-left: 10px;
   width: 30%;
 }
+
+.form-check {
+  margin-bottom: 0.125rem;
+  min-height: 1.5rem;
+  padding-left: 1.5em;
+}
+
+.form-check-input {
+  float: left;
+  margin-left: -1.5em;
+}
+
+.btn {
+  background-color: #003be5;
+  border: 1px solid #0a53be;
+  border-radius: 2px;
+  color: white;
+  margin-top: 30px;
+  padding: 8px 32px;
+}

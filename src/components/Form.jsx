@@ -126,38 +126,44 @@ export default class Form extends Component {
             </select>
           </label>
         </div>
-        <label htmlFor="cardTrunfo">
-          Super Trunfo
-          {hasTrunfo && <span>Você já tem um Super Trunfo em seu baralho</span>}
-          {hasTrunfo === false && <input
-            type="checkbox"
-            checked={ cardTrunfo }
-            onChange={ onInputChange }
-            name="cardTrunfo"
-            id="cardTrunfo"
-            data-testid="trunfo-input"
-          />}
-        </label>
-        <button
-          type="button"
-          onClick={
-            () => onSaveButtonClick({
-              cardName,
-              cardDescription,
-              cardAttr1,
-              cardAttr2,
-              cardAttr3,
-              cardImage,
-              cardRare,
-              cardTrunfo })
-          }
-          name="onSaveButtonClick"
-          data-testid="save-button"
-          disabled={ isSaveButtonDisabled }
-        >
-          Salvar
-
-        </button>
+        <div className="form-check">
+          <label htmlFor="cardTrunfo">
+            {hasTrunfo === false && <input
+              type="checkbox"
+              checked={ cardTrunfo }
+              onChange={ onInputChange }
+              name="cardTrunfo"
+              id="cardTrunfo"
+              data-testid="trunfo-input"
+              className="form-check-input"
+            />}
+            {hasTrunfo
+              ? <p>Você já tem um Super Trunfo em seu baralho</p>
+              : <p>Super Trunfo</p>}
+          </label>
+        </div>
+        <div className="mb-3">
+          <button
+            type="button"
+            onClick={
+              () => onSaveButtonClick({
+                cardName,
+                cardDescription,
+                cardAttr1,
+                cardAttr2,
+                cardAttr3,
+                cardImage,
+                cardRare,
+                cardTrunfo })
+            }
+            className="btn"
+            name="onSaveButtonClick"
+            data-testid="save-button"
+            disabled={ isSaveButtonDisabled }
+          >
+            Salvar
+          </button>
+        </div>
       </form>
     );
   }
