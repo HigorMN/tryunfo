@@ -15,9 +15,9 @@ export default class Card extends Component {
     } = this.props;
 
     return (
-      <div data-testid="name-card">
-        <p>{cardName}</p>
+      <div data-testid="name-card" className="container-card">
         <img src={ cardImage } alt={ cardName } data-testid="image-card" />
+        <h1>{cardName}</h1>
         <p data-testid="description-card">{cardDescription}</p>
         <p data-testid="attr1-card">{cardAttr1}</p>
         <p data-testid="attr2-card">{cardAttr2}</p>

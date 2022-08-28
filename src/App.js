@@ -157,6 +157,7 @@ class App extends React.Component {
             />
           </div>
           <div className="container-preview">
+            <h1>Pré-visualização</h1>
             <Card
               onInputChange={ this.handleChange }
               cardName={ cardName }
