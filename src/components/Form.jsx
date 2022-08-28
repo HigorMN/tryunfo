@@ -20,17 +20,20 @@ export default class Form extends Component {
 
     return (
       <form action="">
-        <label htmlFor="cardName">
-          Nome
-          <input
-            type="text"
-            value={ cardName }
-            onChange={ onInputChange }
-            name="cardName"
-            id="cardName"
-            data-testid="name-input"
-          />
-        </label>
+        <div className="mb-3">
+          <label htmlFor="cardName" className="form-label">
+            Nome
+            <input
+              type="text"
+              value={ cardName }
+              onChange={ onInputChange }
+              name="cardName"
+              id="cardName"
+              data-testid="name-input"
+              className="form-control"
+            />
+          </label>
+        </div>
         <label htmlFor="cardDescription">
           Descrição
           <textarea

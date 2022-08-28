@@ -138,9 +138,9 @@ class App extends React.Component {
       trunfo,
     } = this.state;
     return (
-      <main>
-        <div className="conteudo">
-          <div className="divForm">
+      <main className="main">
+        <div className="container">
+          <div className="container-form">
             <Form
               onInputChange={ this.handleChange }
               cardName={ cardName }
@@ -156,7 +156,7 @@ class App extends React.Component {
               onSaveButtonClick={ this.handleClick }
             />
           </div>
-          <div className="divPrev">
+          <div className="container-preview">
             <Card
               onInputChange={ this.handleChange }
               cardName={ cardName }
