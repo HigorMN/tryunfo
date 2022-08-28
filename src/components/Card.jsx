@@ -25,13 +25,30 @@ export default class Card extends Component {
         <div className="description-card">
           <p data-testid="description-card">{cardDescription}</p>
         </div>
-        <p data-testid="attr1-card">{cardAttr1}</p>
-        <p data-testid="attr2-card">{cardAttr2}</p>
-        <p data-testid="attr3-card">{cardAttr3}</p>
-        <p data-testid="rare-card">{cardRare}</p>
-        {
-          cardTrunfo && <h3 data-testid="trunfo-card">Super Trunfo</h3>
-        }
+        <div className="cards">
+          <div className="card-atributes">
+            <p>Atricuto 01  . . . . . . . . . . . . . . . .</p>
+            <div className="attr">
+              <p data-testid="attr1-card">{cardAttr1}</p>
+            </div>
+          </div>
+          <div className="card-atributes">
+            <p>Atricuto 02 . . . . . . . . . . . . . . . .</p>
+            <div className="attr">
+              <p data-testid="attr2-card">{cardAttr2}</p>
+            </div>
+          </div>
+          <div className="card-atributes">
+            <p>Atricuto 03 . . . . . . . . . . . . . . . .</p>
+            <div className="attr">
+              <p data-testid="attr3-card">{cardAttr3}</p>
+            </div>
+          </div>
+          <p data-testid="rare-card">{cardRare}</p>
+          {
+            cardTrunfo && <h3 data-testid="trunfo-card">Super Trunfo</h3>
+          }
+        </div>
       </div>
     );
   }
