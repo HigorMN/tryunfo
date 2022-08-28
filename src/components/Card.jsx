@@ -22,7 +22,9 @@ export default class Card extends Component {
         <div className="img-card">
           <img src={ cardImage } alt={ cardName } data-testid="image-card" />
         </div>
-        <p data-testid="description-card">{cardDescription}</p>
+        <div className="description-card">
+          <p data-testid="description-card">{cardDescription}</p>
+        </div>
         <p data-testid="attr1-card">{cardAttr1}</p>
         <p data-testid="attr2-card">{cardAttr2}</p>
         <p data-testid="attr3-card">{cardAttr3}</p>
