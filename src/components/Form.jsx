@@ -20,9 +20,6 @@ export default class Form extends Component {
 
     return (
       <form action="">
-        <div className="mb-5">
-          <h1>Adicionar nova carta</h1>
-        </div>
         <div className="mb-3">
           <label htmlFor="cardName" className="form-label">
             Nome

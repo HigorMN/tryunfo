@@ -141,6 +141,7 @@ class App extends React.Component {
       <main className="main">
         <div className="container">
           <div className="container-form">
+            <h1>Adicionar nova carta</h1>
             <Form
               onInputChange={ this.handleChange }
               cardName={ cardName }

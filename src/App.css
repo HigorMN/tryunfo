@@ -5,11 +5,17 @@
 
 .container {
   display: flex;
+  height: 856px;
+}
+
+.container h1 {
+  padding-bottom: 50px;
+  text-align: center;
 }
 
 .container-form {
   background-color: #fafafa;
-  padding-top: 40px;
+  padding-top: 50px;
   width: 50%;
 }
 
@@ -102,4 +108,14 @@ button:hover:disabled {
   background-color: #0039e519;
   border: 1px solid #0a52be3c;
   cursor: auto;
+}
+
+.container-card {
+  background-color: #036b52;
+  border: 10px solid white;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.25);
+  height: 549px;
+  margin: auto;
+  width: 368px;
 }
