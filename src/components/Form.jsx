@@ -109,20 +109,23 @@ export default class Form extends Component {
             />
           </label>
         </div>
-        <label htmlFor="cardRare">
-          Raridade
-          <select
-            value={ cardRare }
-            onChange={ onInputChange }
-            name="cardRare"
-            id="cardRare"
-            data-testid="rare-input"
-          >
-            <option value="normal">Normal</option>
-            <option value="raro">Raro</option>
-            <option value="muito raro">Muito raro</option>
-          </select>
-        </label>
+        <div className="mb-3">
+          <label htmlFor="cardRare" className="form-label">
+            Raridade
+            <select
+              value={ cardRare }
+              onChange={ onInputChange }
+              name="cardRare"
+              id="cardRare"
+              data-testid="rare-input"
+              className="form-control"
+            >
+              <option value="normal">Normal</option>
+              <option value="raro">Raro</option>
+              <option value="muito raro">Muito raro</option>
+            </select>
+          </label>
+        </div>
         <label htmlFor="cardTrunfo">
           Super Trunfo
           {hasTrunfo && <span>Você já tem um Super Trunfo em seu baralho</span>}
