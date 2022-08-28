@@ -20,6 +20,9 @@ export default class Form extends Component {
 
     return (
       <form action="">
+        <div className="mb-5">
+          <h1>Adicionar nova carta</h1>
+        </div>
         <div className="mb-3">
           <label htmlFor="cardName" className="form-label">
             Nome
@@ -97,7 +100,7 @@ export default class Form extends Component {
         </div>
         <div className="mb-3">
           <label htmlFor="cardImage" className="form-label">
-            Link da imagem
+            Imagem
             <input
               type="text"
               value={ cardImage }
@@ -106,6 +109,7 @@ export default class Form extends Component {
               id="cardImage"
               data-testid="image-input"
               className="form-control"
+              placeholder="link da imagem"
             />
           </label>
         </div>
@@ -142,7 +146,7 @@ export default class Form extends Component {
               : <p>Super Trunfo</p>}
           </label>
         </div>
-        <div className="mb-3">
+        <div className="mb-3 mt-4">
           <button
             type="button"
             onClick={
