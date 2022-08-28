@@ -34,18 +34,19 @@ export default class Form extends Component {
             />
           </label>
         </div>
-        <label htmlFor="cardDescription">
-          Descrição
-          <textarea
-            name="cardDescription"
-            value={ cardDescription }
-            onChange={ onInputChange }
-            id="cardDescription"
-            cols="30"
-            rows="10"
-            data-testid="description-input"
-          />
-        </label>
+        <div className="mb-3">
+          <label htmlFor="cardDescription" className="form-label">
+            Descrição
+            <textarea
+              name="cardDescription"
+              value={ cardDescription }
+              onChange={ onInputChange }
+              id="cardDescription"
+              data-testid="description-input"
+              className="form-control"
+            />
+          </label>
+        </div>
         <label htmlFor="cardAttr1">
           Atributo 1
           <input
