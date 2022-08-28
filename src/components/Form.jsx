@@ -47,19 +47,22 @@ export default class Form extends Component {
             />
           </label>
         </div>
-        <label htmlFor="cardAttr1">
-          Atributo 1
-          <input
-            type="number"
-            min="0"
-            max="90"
-            value={ cardAttr1 }
-            onChange={ onInputChange }
-            name="cardAttr1"
-            id="cardAttr1"
-            data-testid="attr1-input"
-          />
-        </label>
+        <div className="mb-3">
+          <label htmlFor="cardAttr1" className="form-label">
+            Atributo 1
+            <input
+              type="number"
+              min="0"
+              max="90"
+              value={ cardAttr1 }
+              onChange={ onInputChange }
+              name="cardAttr1"
+              id="cardAttr1"
+              data-testid="attr1-input"
+              className="form-number"
+            />
+          </label>
+        </div>
         <label htmlFor="cardAttr2">
           Atributo 2
           <input
