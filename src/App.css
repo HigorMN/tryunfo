@@ -119,3 +119,11 @@ button:hover:disabled {
   margin: auto;
   width: 368px;
 }
+
+.name-card {
+  background: #023031;
+  border-radius: 10px 10px 0 0;
+  height: 40px;
+  margin: 20px auto;
+  width: 317px;
+}
