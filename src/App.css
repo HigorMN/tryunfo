@@ -68,3 +68,19 @@
   margin-top: 30px;
   padding: 8px 32px;
 }
+
+.btn:hover {
+  background-color: #0a53be;
+  cursor: pointer;
+}
+
+button:disabled {
+  background-color: #0039e519;
+  border: 1px solid #0a52be3c;
+}
+
+button:hover:disabled {
+  background-color: #0039e519;
+  border: 1px solid #0a52be3c;
+  cursor: auto;
+}
