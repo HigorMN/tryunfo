@@ -95,17 +95,20 @@ export default class Form extends Component {
             />
           </label>
         </div>
-        <label htmlFor="cardImage">
-          Link da imagem
-          <input
-            type="text"
-            value={ cardImage }
-            onChange={ onInputChange }
-            name="cardImage"
-            id="cardImage"
-            data-testid="image-input"
-          />
-        </label>
+        <div className="mb-3">
+          <label htmlFor="cardImage" className="form-label">
+            Link da imagem
+            <input
+              type="text"
+              value={ cardImage }
+              onChange={ onInputChange }
+              name="cardImage"
+              id="cardImage"
+              data-testid="image-input"
+              className="form-control"
+            />
+          </label>
+        </div>
         <label htmlFor="cardRare">
           Raridade
           <select
