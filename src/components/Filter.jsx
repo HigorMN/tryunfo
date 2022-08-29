@@ -23,13 +23,14 @@ export default class Filter extends Component {
             />
           </label>
         </div>
-        <div>
+        <div className="mb-3">
           <select
             data-testid="rare-filter"
             name="filterR"
             value={ filterR }
             onChange={ onInputChange }
             disabled={ trunfo }
+            className="form-select"
           >
             <option value="todas">todas</option>
             <option value="normal">normal</option>
@@ -37,9 +38,8 @@ export default class Filter extends Component {
             <option value="muito raro">muito raro</option>
           </select>
         </div>
-        <div>
+        <div className="form-check">
           <label htmlFor="trunfo">
-            Super Trunfo
             <input
               type="checkbox"
               checked={ trunfo }
@@ -47,7 +47,9 @@ export default class Filter extends Component {
               name="trunfo"
               id="trunfo"
               data-testid="trunfo-filter"
+              className="form-check-input"
             />
+            Super Trunfo
           </label>
         </div>
       </div>

@@ -119,7 +119,7 @@ export default class Form extends Component {
               name="cardRare"
               id="cardRare"
               data-testid="rare-input"
-              className="form-control"
+              className="form-select"
             >
               <option value="normal">Normal</option>
               <option value="raro">Raro</option>
