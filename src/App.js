@@ -195,16 +195,14 @@ class App extends React.Component {
                   cardRare={ e.cardRare }
                   cardTrunfo={ e.cardTrunfo }
                 />
-                <div className="container-button">
-                  <button
-                    type="button"
-                    data-testid="delete-button"
-                    onClick={ this.handleClickDelete }
-                    className="btn ma"
-                  >
-                    Excluir
-                  </button>
-                </div>
+                <button
+                  type="button"
+                  data-testid="delete-button"
+                  onClick={ this.handleClickDelete }
+                  className="btn ma"
+                >
+                  Excluir
+                </button>
               </li>
             ))}
           </ul>
