@@ -132,29 +132,30 @@ button:hover:disabled {
 
 .img-card {
   background-color: #0230318d;
-  height: 278px;
+  height: 230px;
   margin: auto;
   text-align: center;
   width: 317px;
 }
 
 .img-card img {
-  height: 270px;
+  height: 225px;
   margin-top: 4px;
-  width: 270px;
+  width: 225px;
 }
 
 .description-card {
   font-family: sans-serif;
   font-style: normal;
+  height: 70px;
   margin: 5px auto;
-  max-height: 70px;
   overflow: hidden;
   width: 317px;
 }
 
 .cards {
   background-color: white;
+  border-radius: 0 0 10px 10px;
   color: black;
   margin: auto;
   padding-top: 5px;
@@ -189,4 +190,9 @@ button:hover:disabled {
 .attr p {
   font-size: 18px;
   padding-top: 5px;
+}
+
+.rare-card p, h3 {
+  padding: 5px;
+  text-align: center;
 }

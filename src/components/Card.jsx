@@ -44,7 +44,9 @@ export default class Card extends Component {
               <p data-testid="attr3-card">{cardAttr3}</p>
             </div>
           </div>
-          <p data-testid="rare-card">{cardRare}</p>
+          <div className="rare-card">
+            <p data-testid="rare-card">{cardRare}</p>
+          </div>
           {
             cardTrunfo && <h3 data-testid="trunfo-card">Super Trunfo</h3>
           }
