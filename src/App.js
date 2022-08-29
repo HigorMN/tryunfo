@@ -181,7 +181,7 @@ class App extends React.Component {
           />
         </div>
         <div>
-          <ul>
+          <ul className="list-save">
             { this.filterList(filterI, filterR, trunfo).map((e) => (
               <li key={ e.cardName }>
                 <Card
@@ -195,15 +195,16 @@ class App extends React.Component {
                   cardRare={ e.cardRare }
                   cardTrunfo={ e.cardTrunfo }
                 />
-                <button
-                  type="button"
-                  data-testid="delete-button"
-                  onClick={ this.handleClickDelete }
-                  className="btn"
-                >
-                  Excluir
-
-                </button>
+                <div className="container-button">
+                  <button
+                    type="button"
+                    data-testid="delete-button"
+                    onClick={ this.handleClickDelete }
+                    className="btn ma"
+                  >
+                    Excluir
+                  </button>
+                </div>
               </li>
             ))}
           </ul>
