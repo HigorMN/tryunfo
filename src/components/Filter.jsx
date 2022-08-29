@@ -5,17 +5,23 @@ export default class Filter extends Component {
   render() {
     const { filterI, onInputChange, filterR, trunfo } = this.props;
     return (
-      <>
-        <div>
-          <input
-            type="text"
-            name="filterI"
-            id="filterI"
-            data-testid="name-filter"
-            value={ filterI }
-            onChange={ onInputChange }
-            disabled={ trunfo }
-          />
+      <div className="container-filter">
+        <h1 className="mt-4">Todas as cartas</h1>
+        <h4>Filtros de busca</h4>
+        <div className="mb-3">
+          <label htmlFor="filterI" className="form-label">
+            <input
+              type="text"
+              name="filterI"
+              id="filterI"
+              data-testid="name-filter"
+              value={ filterI }
+              onChange={ onInputChange }
+              disabled={ trunfo }
+              className="form-control"
+              placeholder="Nome da carta"
+            />
+          </label>
         </div>
         <div>
           <select
@@ -44,7 +50,7 @@ export default class Filter extends Component {
             />
           </label>
         </div>
-      </>
+      </div>
     );
   }
 }

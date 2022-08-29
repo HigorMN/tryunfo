@@ -199,6 +199,7 @@ class App extends React.Component {
                   type="button"
                   data-testid="delete-button"
                   onClick={ this.handleClickDelete }
+                  className="btn"
                 >
                   Excluir
 

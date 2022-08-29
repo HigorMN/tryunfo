@@ -3,12 +3,16 @@
   padding: 0;
 }
 
+main {
+  background-color: #fafafa;
+}
+
 .container {
   display: flex;
   height: 856px;
 }
 
-.container h1, .container-card h1 {
+.container h1, .container-card h1, .container-filter h1 {
   padding-bottom: 50px;
   text-align: center;
 }
@@ -116,7 +120,7 @@ button:hover:disabled {
   border-radius: 10px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.25);
   color: white;
-  height: 549px;
+  height: 559px;
   margin: auto;
   width: 368px;
 }
@@ -195,4 +199,9 @@ button:hover:disabled {
 .rare-card p, h3 {
   padding: 5px;
   text-align: center;
+}
+
+.container-filter {
+  margin: auto;
+  width: 480px;
 }
